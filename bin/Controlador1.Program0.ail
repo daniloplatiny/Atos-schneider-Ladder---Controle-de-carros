@@ -1,0 +1,290 @@
+(* line 0001 *)
+ld closed_contact chave_Emergencia
+out_end coil sistemOnOff
+END_LINE
+
+(* line 0002 *)
+ld opened_contact sistemOnOff
+out_or_end reset_coil M1
+out_or_end reset_coil M2
+out_or_end reset_coil M3
+out_end reset_coil M4
+
+END_LINE
+
+(* line 0003 *)
+ld closed_contact sistemOnOff
+ld opened_contact botao_P1
+and opened_contact sensor_A
+ld opened_contact botIHM_P1
+and opened_contact sensor_A
+orld
+andld
+and closed_contact M1
+out_or_end set_coil M1
+out_or_end set_coil C1_AD
+out_end coil Conta_C1
+
+END_LINE
+
+(* line 0004 *)
+ld opened_contact Conta_C1
+function_block_end IEC61131.CTU.CTU_1 ( aux1 auxiliar contador_1 )
+END_LINE
+
+(* line 0005 *)
+ld closed_contact sistemOnOff
+and opened_contact C2_DC
+and opened_contact sensor_D1
+and opened_contact C1_AD
+out_end reset_coil M1
+END_LINE
+
+(* line 0006 *)
+ld closed_contact sistemOnOff
+and opened_contact sensor_D1
+and opened_contact M4
+and opened_contact sensor_D2
+out_end set_coil M1
+END_LINE
+
+(* line 0007 *)
+ld closed_contact sistemOnOff
+and closed_contact C2_DC
+and negative_transition_contact sensor_D1
+and closed_contact M2
+out_or_end reset_coil C1_AD
+out_or_end set_coil M1
+out_or_end set_coil C1_DC
+out_end reset_coil V1
+
+END_LINE
+
+(* line 0008 *)
+ld closed_contact sistemOnOff
+and opened_contact sensor_C
+and opened_contact C1_DC
+out_or_end reset_coil M1
+out_end set_coil M2
+
+END_LINE
+
+(* line 0009 *)
+ld closed_contact sistemOnOff
+and opened_contact sensor_D1
+and opened_contact C1_DC
+out_or_end reset_coil C1_DC
+out_end set_coil C1_AD
+
+END_LINE
+
+(* line 0010 *)
+ld closed_contact sistemOnOff
+and opened_contact sensor_A
+and opened_contact M2
+and opened_contact C1_AD
+out_or_end reset_coil M2
+out_end reset_coil C1_AD
+
+END_LINE
+
+(* line 0011 *)
+ld closed_contact sistemOnOff
+ld opened_contact botao_P2
+and opened_contact sensor_B
+ld opened_contact botIHM_P2
+and opened_contact sensor_B
+orld
+andld
+out_or_end set_coil M3
+out_or_end set_coil C2_BD
+out_end coil Conta_C2
+
+END_LINE
+
+(* line 0012 *)
+ld opened_contact Conta_C2
+function_block_end IEC61131.CTU.CTU_2 ( aux1 auxiliar contador_2 )
+END_LINE
+
+(* line 0013 *)
+ld closed_contact sistemOnOff
+and opened_contact C1_DC
+and opened_contact sensor_D2
+and opened_contact C2_BD
+out_end reset_coil M3
+END_LINE
+
+(* line 0014 *)
+ld closed_contact sistemOnOff
+and opened_contact sensor_D1
+and closed_contact M3
+and opened_contact C2_BD
+out_end set_coil M3
+END_LINE
+
+(* line 0015 *)
+ld closed_contact sistemOnOff
+and closed_contact C1_DC
+and negative_transition_contact sensor_D2
+and closed_contact M4
+out_or_end reset_coil C2_BD
+out_or_end set_coil M3
+out_or_end set_coil C2_DC
+out_end set_coil V1
+
+END_LINE
+
+(* line 0016 *)
+ld closed_contact sistemOnOff
+and opened_contact sensor_C
+and opened_contact C2_DC
+out_or_end reset_coil M3
+out_end set_coil M4
+
+END_LINE
+
+(* line 0017 *)
+ld closed_contact sistemOnOff
+and opened_contact sensor_D2
+and opened_contact C2_DC
+out_or_end reset_coil C2_DC
+out_end set_coil C2_BD
+
+END_LINE
+
+(* line 0018 *)
+ld closed_contact sistemOnOff
+and opened_contact sensor_B
+and opened_contact M4
+and opened_contact C2_BD
+out_or_end reset_coil M4
+out_end reset_coil C2_BD
+
+END_LINE
+
+(* line 0019 *)
+ld opened_contact C2_DC
+and opened_contact C1_DC
+out_end coil Alarme
+END_LINE
+
+(* line 0020 *)
+ld opened_contact sensor_A
+and opened_contact sensor_D1
+ld opened_contact sensor_B
+and opened_contact sensor_D2
+orld
+out_end coil Alarme_conflito
+END_LINE
+
+(* line 0021 *)
+ld opened_contact M2
+function_end ATOS.TAB ( motor_M2 1 0 )
+END_LINE
+
+(* line 0022 *)
+ld closed_contact M2
+function_end ATOS.TAB ( motor_M2 0 0 )
+END_LINE
+
+(* line 0023 *)
+ld opened_contact M1
+function_end ATOS.TAB ( motor_M1 1 0 )
+END_LINE
+
+(* line 0024 *)
+ld closed_contact M1
+function_end ATOS.TAB ( motor_M1 0 0 )
+END_LINE
+
+(* line 0025 *)
+ld opened_contact M3
+function_end ATOS.TAB ( motor_M3 1 0 )
+END_LINE
+
+(* line 0026 *)
+ld closed_contact M3
+function_end ATOS.TAB ( motor_M3 0 0 )
+END_LINE
+
+(* line 0027 *)
+ld opened_contact M4
+function_end ATOS.TAB ( motor_M4 1 0 )
+END_LINE
+
+(* line 0028 *)
+ld closed_contact M4
+function_end ATOS.TAB ( motor_M4 0 0 )
+END_LINE
+
+(* line 0029 *)
+ld opened_contact sensor_A
+function_end ATOS.TAB ( Ihm_sensor_A 1 0 )
+END_LINE
+
+(* line 0030 *)
+ld closed_contact sensor_A
+function_end ATOS.TAB ( Ihm_sensor_A 0 0 )
+END_LINE
+
+(* line 0031 *)
+ld opened_contact sensor_B
+function_end ATOS.TAB ( Ihm_sensor_B 1 0 )
+END_LINE
+
+(* line 0032 *)
+ld closed_contact sensor_B
+function_end ATOS.TAB ( Ihm_sensor_B 0 0 )
+END_LINE
+
+(* line 0033 *)
+ld opened_contact sensor_D1
+function_end ATOS.TAB ( Ihm_sensor_D1 1 0 )
+END_LINE
+
+(* line 0034 *)
+ld closed_contact sensor_D1
+function_end ATOS.TAB ( Ihm_sensor_D1 0 0 )
+END_LINE
+
+(* line 0035 *)
+ld opened_contact sensor_D2
+function_end ATOS.TAB ( Ihm_sensor_D2 1 0 )
+END_LINE
+
+(* line 0036 *)
+ld closed_contact sensor_D2
+function_end ATOS.TAB ( Ihm_sensor_D2 0 0 )
+END_LINE
+
+(* line 0037 *)
+ld opened_contact sensor_C
+function_end ATOS.TAB ( Ihm_sensor_C 1 0 )
+END_LINE
+
+(* line 0038 *)
+ld closed_contact sensor_C
+function_end ATOS.TAB ( Ihm_sensor_C 0 0 )
+END_LINE
+
+(* line 0039 *)
+ld opened_contact V1
+function_end ATOS.TAB ( Ihm_V1 1 0 )
+END_LINE
+
+(* line 0040 *)
+ld closed_contact V1
+function_end ATOS.TAB ( Ihm_V1 0 0 )
+END_LINE
+
+(* line 0041 *)
+ld opened_contact sistemOnOff
+function_end ATOS.TAB ( Ihm_Emergencia 1 0 )
+END_LINE
+
+(* line 0042 *)
+ld closed_contact sistemOnOff
+function_end ATOS.TAB ( Ihm_Emergencia 0 0 )
+END_LINE
+
